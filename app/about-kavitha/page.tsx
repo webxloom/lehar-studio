@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import WaveDivider from "@/components/WaveDivider";
 
 export const metadata: Metadata = {
-  title: "Léhar Studio | Sound Healing & Breathwork in Mulund East, Mumbai",
+  title: "About Kavitha Prasad | Founder of Léhar Studio, Mumbai",
   description:
-    "Léhar Studio by Kavitha Prasad: grounding, structured breathwork and immersive sound for stress relief and deep rest. Group, one-to-one and corporate sessions in Mumbai.",
-  alternates: { canonical: "/" },
+    "Meet Kavitha Prasad, certified sound healing practitioner and founder of Léhar Studio in Mulund East, Mumbai. Her story, vision, mission and guiding principles.",
+  alternates: { canonical: "/about-kavitha" },
 };
 
 // SCAFFOLD PLACEHOLDER — page content is ported from Aji's
-// `index.html` once his instructions file arrives.
-export default function HomePage() {
+// `about-kavitha.html` once his instructions file arrives.
+export default function AboutKavithaPage() {
   return (
     <section className="banner">
       <div className="wrap">
         <p className="eyebrow">Coming soon</p>
-        <h1>Where Sound Meets Stillness</h1>
+        <h1>Meet Kavitha Prasad</h1>
         <p className="sub">This page is being migrated to Next.js.</p>
       </div>
       <WaveDivider />
