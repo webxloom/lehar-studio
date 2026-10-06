@@ -92,16 +92,19 @@ export function PhotoBanner({
   title,
   sub,
   pos,
+  tall,
 }: {
   img: string;
   crumbs: Crumb[];
-  eyebrow?: string;
+  eyebrow?: React.ReactNode;
   title: string;
   sub?: string;
   pos?: "left" | "right";
+  /** show the whole photo (no max-height crop), as on Aji's one-to-one page */
+  tall?: boolean;
 }) {
   return (
-    <section className={`banner has-photo${pos ? ` pos-${pos}` : ""}`}>
+    <section className={`banner has-photo${pos ? ` pos-${pos}` : ""}${tall ? " banner-tall" : ""}`}>
       <Img name={img} className="banner-img" sizes="100vw" priority />
       <div className="banner-in">
         <div className="wrap">

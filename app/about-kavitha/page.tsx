@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import WaveDivider from "@/components/WaveDivider";
+import Link from "next/link";
+import { Img, ParallaxCta, PhotoBanner, Sec, Verse } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "About Kavitha Prasad | Founder of Léhar Studio, Mumbai",
@@ -8,17 +9,159 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about-kavitha" },
 };
 
-// SCAFFOLD PLACEHOLDER — page content is ported from Aji's
-// `about-kavitha.html` once his instructions file arrives.
+const STORY = [
+  {
+    title: "Two callings",
+    img: "about-kavitha-two-callings.avif",
+    text: "For more than 25 years, I balanced a demanding corporate career with raising my child as a single parent and caring for the people who depended on me. It taught me resilience, and how easily rest slides to the bottom of the list.",
+  },
+  {
+    title: "Music, always",
+    img: "about-kavitha-music-always.avif",
+    text: "Music never left. Slowly it became a way to pause, notice and return to myself, and I grew curious about how sound, rhythm, breath and silence change a moment.",
+  },
+  {
+    title: "The training",
+    img: "about-kavitha-training.avif",
+    text: "That curiosity led me deeper into sound-based practice, bringing together Himalayan singing bowls, resonant instruments, structured breathwork, Indian raagas, Solfeggio frequencies, mantra and voice.",
+    creds: [
+      ["Level 3 Certified Sound Healing Practitioner", "Vinyasa Yoga Ashram, Rishikesh"],
+      ["Integrated Therapy in Sound, Music and Breathwork", "Harmony Heals Academy"],
+    ],
+  },
+  {
+    title: "A doorway into stillness",
+    img: "about-kavitha-doorway.avif",
+    text: "Many people find silence hard, or worry they are not meditating “correctly”. A sound immersion asks for none of that. You lie down, let your breath settle and see what unfolds.",
+  },
+  {
+    title: "Léhar Studio is born",
+    img: "about-kavitha-lehar.avif",
+    text: "Léhar Studio weaves the strands of my life: career, parenthood and caregiving, music, and my training in sound and breath. A space where nothing needs to be solved, performed or held together.",
+  },
+];
+
+const PRINCIPLES = [
+  { title: "Safety and comfort", line: "Your physical and emotional comfort always come first." },
+  { title: "Respect for individual experience", line: "There is no correct way to respond to sound." },
+  { title: "Intention without expectation", line: "Every element is chosen with care; no result is promised." },
+  { title: "Simplicity and accessibility", line: "No experience needed. Arrive exactly as you are." },
+  { title: "Care and presence", line: "The quality of attention matters as much as the instruments." },
+];
+
 export default function AboutKavithaPage() {
   return (
-    <section className="banner">
-      <div className="wrap">
-        <p className="eyebrow">Coming soon</p>
-        <h1>Meet Kavitha Prasad</h1>
-        <p className="sub">This page is being migrated to Next.js.</p>
-      </div>
-      <WaveDivider />
-    </section>
+    <>
+      <PhotoBanner
+        img="About-banner.avif"
+        pos="right"
+        crumbs={[{ href: "/", label: "Home" }, { label: "Meet Kavitha Prasad" }]}
+        eyebrow={
+          <>
+            Founder and guiding practitioner, <span className="no-caps">Léhar Studio</span>
+          </>
+        }
+        title="Meet Kavitha Prasad"
+      />
+
+      <Sec>
+        <div className="intro-grid">
+          <div className="portrait" aria-hidden="true">
+            <Img name="about-kp-portrait.avif" className="fade-all" sizes="(max-width: 1000px) 90vw, 380px" />
+          </div>
+          <div>
+            <Verse lines={["She kept the world going, year on year,", "and now she helps you pause right here."]} />
+            <p>
+              After more than 25 years in corporate leadership, alongside raising her child as a single parent and caring
+              for others, Kavitha now designs and guides personalised one-to-one immersions and intimate group sound
+              experiences, built on one belief: there is nothing to perform or achieve.
+            </p>
+          </div>
+        </div>
+      </Sec>
+
+      <Sec alt>
+        <h2>The One Who Kept Going</h2>
+        <ol className="story">
+          {STORY.map((c) => (
+            <li key={c.title} className="chap">
+              <div className="chap-text">
+                <h3>{c.title}</h3>
+                <p>{c.text}</p>
+                {c.creds?.map(([what, where]) => (
+                  <span key={what} className="cred">
+                    <b>{what}</b> · {where}
+                  </span>
+                ))}
+              </div>
+              <figure className="chap-img">
+                <Img name={c.img} className="fade-all" />
+              </figure>
+            </li>
+          ))}
+        </ol>
+        <blockquote className="verse pull">
+          <p>
+            I do not believe anyone needs to be “fixed”, or that there is one correct way to experience sound. What I can
+            offer is a carefully held space where you feel safe enough to slow down. You are welcome exactly as you are.
+          </p>
+          <cite>Kavitha Prasad</cite>
+        </blockquote>
+      </Sec>
+
+      <Sec bg="about-mission-vision-bg.avif">
+        <div className="cards c2">
+          <article className="glass-card">
+            <h3 className="has-ico">
+              <span className="card-ico">
+                <i aria-hidden="true" className="fa-solid fa-eye" />
+              </span>
+              Vision
+            </h3>
+            <p>
+              Spaces where people step away from the noise and pace of life and rediscover the ability to simply pause,
+              listen and reconnect.
+            </p>
+          </article>
+          <article className="glass-card">
+            <h3 className="has-ico">
+              <span className="card-ico">
+                <i aria-hidden="true" className="fa-solid fa-bullseye" />
+              </span>
+              Mission
+            </h3>
+            <p>
+              Carefully guided experiences of sound, breath and music, where everyone feels welcomed, unhurried and cared
+              for.
+            </p>
+          </article>
+        </div>
+      </Sec>
+
+      <Sec alt bg="about-principles-bg.avif">
+        <h2>The Principles That Guide My Work</h2>
+        <div className="cards">
+          {PRINCIPLES.map((p) => (
+            <article key={p.title} className="glass-card">
+              <h3>{p.title}</h3>
+              <p>{p.line}</p>
+            </article>
+          ))}
+        </div>
+      </Sec>
+
+      <ParallaxCta img="about-cta.avif" id="next">
+        <h2>Begin With a Conversation</h2>
+        <Verse lines={["Ready to book, or just to ask,", "the first step is a gentle task."]} />
+        <p>
+          <Link className="btn" href="/booking">
+            Book a Session
+          </Link>
+          <Link className="btn ghost" href="/services">
+            Explore the Services
+          </Link>
+        </p>
+      </ParallaxCta>
+    </>
   );
 }

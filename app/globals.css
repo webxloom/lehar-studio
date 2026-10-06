@@ -472,3 +472,8 @@ dialog.t-dlg::backdrop{background:rgba(8,17,22,.6)}
 @media (max-width:700px){.timebar.labelled{flex-direction:column;gap:8px}.timebar.labelled span{flex:1 1 auto!important;min-height:56px}}
 /* Heading-only audience cards */
 .who-card h3{margin:0;font-size:1.12rem}
+/* Keep the studio name in its own case inside uppercase eyebrows */
+.no-caps{text-transform:none;letter-spacing:.04em}
+/* One-to-one banner shows the full photo (Aji's page-level override, now scoped) */
+.banner-tall .banner-img{max-height:none;height:auto;min-height:360px;object-fit:cover;object-position:center}
+@media (max-width:700px){.banner-tall .banner-img{min-height:420px}}
