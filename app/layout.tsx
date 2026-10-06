@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import PageEffects from "@/components/PageEffects";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, STUDIO } from "@/lib/site";
 
 const elsie = Elsie({
   subsets: ["latin"],
@@ -48,6 +48,20 @@ export const viewport: Viewport = {
   themeColor: "#F7F9FA",
 };
 
+// Business details for search engines (from Aji's JSON-LD).
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  name: STUDIO.name,
+  description: "Sound immersion, structured breathwork and grounding led by Kavitha Prasad in Mulund East, Mumbai.",
+  url: SITE_URL,
+  telephone: STUDIO.phone,
+  email: STUDIO.email,
+  areaServed: STUDIO.areaServed,
+  founder: { "@type": "Person", name: STUDIO.founder },
+  sameAs: [STUDIO.instagram],
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
@@ -61,6 +75,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           inject body attributes. Children are still checked. */}
       <body suppressHydrationWarning>
         <ThemeScript />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <a className="skip" href="#main">
           Skip to content
         </a>

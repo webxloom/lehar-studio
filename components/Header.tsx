@@ -5,6 +5,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NAV } from "@/lib/site";
+import AmbientSound from "@/components/AmbientSound";
 
 export default function Header() {
   const pathname = usePathname();
@@ -85,6 +86,7 @@ export default function Header() {
           <Link className="btn book" href="/booking" onClick={closeAll}>
             Book Your First Step
           </Link>
+          <AmbientSound />
           <button className="theme-btn" onClick={toggleTheme} aria-label="Switch colour theme">
             <i className="fa-solid fa-moon" />
             <i className="fa-solid fa-sun" />
