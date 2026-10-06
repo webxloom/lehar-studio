@@ -1,24 +1,38 @@
 import type { Metadata } from "next";
-import WaveDivider from "@/components/WaveDivider";
+import { Suspense } from "react";
+import EnquiryForm from "@/components/EnquiryForm";
+import { PhotoBanner, Sec } from "@/components/ui";
+import { STUDIO } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Booking & Contact | Léhar Studio, Mulund East, Mumbai",
   description:
-    "Book a Group Sound Bath, One-to-One Immersion or Corporate & Retreat experience. Contact Kavitha by WhatsApp, phone, email or Instagram. Policies and preparation included.",
+    "Book a Group Sound Bath, One-to-One Immersion, Corporate & Retreat experience or Music Therapy. Contact Kavitha by WhatsApp, phone or email.",
   alternates: { canonical: "/booking" },
 };
 
-// SCAFFOLD PLACEHOLDER — page content is ported from Aji's
-// `booking.html` once his instructions file arrives.
+// Change request: booking kept as simple as possible, only the form matters.
 export default function BookingPage() {
   return (
-    <section className="banner">
-      <div className="wrap">
-        <p className="eyebrow">Coming soon</p>
-        <h1>Take the First Step</h1>
-        <p className="sub">This page is being migrated to Next.js.</p>
-      </div>
-      <WaveDivider />
-    </section>
+    <>
+      <PhotoBanner
+        img="book-banner.avif"
+        crumbs={[{ href: "/", label: "Home" }, { label: "Booking" }]}
+        eyebrow="Booking · Contact"
+        title="Take the First Step"
+        sub="One message is all it takes to start."
+      />
+
+      <Sec id="enquire" alt bg="book-tell-us-bg.avif">
+        <h2>Tell us a little, and we take it from there</h2>
+        <Suspense>
+          <EnquiryForm />
+        </Suspense>
+        <p className="mini">
+          Prefer to talk? Call <a href={STUDIO.phoneHref}>{STUDIO.phone}</a> or email{" "}
+          <a href={`mailto:${STUDIO.email}`}>{STUDIO.email}</a>.
+        </p>
+      </Sec>
+    </>
   );
 }

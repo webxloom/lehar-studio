@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
-import WaveDivider from "@/components/WaveDivider";
+import Link from "next/link";
+import FaqExplorer from "@/components/FaqExplorer";
+import { ParallaxCta, PhotoBanner, Sec } from "@/components/ui";
+import { FAQS } from "@/lib/faqs";
 
 export const metadata: Metadata = {
   title: "FAQs | Sound Healing, Safety, Booking | Léhar Studio",
@@ -8,17 +11,27 @@ export const metadata: Metadata = {
   alternates: { canonical: "/faqs" },
 };
 
-// SCAFFOLD PLACEHOLDER — page content is ported from Aji's
-// `faqs.html` once his instructions file arrives.
 export default function FaqsPage() {
   return (
-    <section className="banner">
-      <div className="wrap">
-        <p className="eyebrow">Coming soon</p>
-        <h1>Frequently Asked Questions</h1>
-        <p className="sub">This page is being migrated to Next.js.</p>
-      </div>
-      <WaveDivider />
-    </section>
+    <>
+      <PhotoBanner
+        img="faq-banner.avif"
+        crumbs={[{ href: "/", label: "Home" }, { label: "FAQs" }]}
+        eyebrow="FAQs"
+        title="Frequently Asked Questions"
+      />
+
+      <Sec bg="faq-questions-bg.avif">
+        <FaqExplorer groups={FAQS} />
+      </Sec>
+
+      <ParallaxCta img="faq-cta.avif">
+        <h2>Still unsure?</h2>
+        <p>A question is a fine first step.</p>
+        <Link className="btn" href="/booking">
+          Ask on the Booking page
+        </Link>
+      </ParallaxCta>
+    </>
   );
 }
