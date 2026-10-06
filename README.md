@@ -32,8 +32,8 @@ placeholder until Aji's instructions file arrives.
 ## Develop
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 ## Environment
