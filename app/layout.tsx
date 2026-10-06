@@ -6,6 +6,7 @@ import ThemeScript from "@/components/ThemeScript";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
+import PageEffects from "@/components/PageEffects";
 import { SITE_URL } from "@/lib/site";
 
 const elsie = Elsie({
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main">{children}</main>
         <Footer />
         <WhatsAppFab />
+        <PageEffects />
       </body>
     </html>
   );

@@ -461,3 +461,14 @@ dialog.t-dlg::backdrop{background:rgba(8,17,22,.6)}
 .banner.has-photo.pos-right .banner-in,.banner.has-photo.pos-left .banner-in{align-items:flex-end}
 .banner.pos-right .banner-in>.wrap,.banner.pos-left .banner-in>.wrap{text-align:center;padding-bottom:46px}
 .banner.pos-right .banner-in>.wrap>*,.banner.pos-left .banner-in>.wrap>*{max-width:100%;margin-left:auto;margin-right:auto}}
+
+/* =========================================================
+   Next.js build additions (Aji's change request)
+   ========================================================= */
+/* Home: the time bar now carries the stage headings (long cards removed) */
+.timebar.labelled{height:auto;min-height:72px}
+.timebar.labelled span{flex-direction:column;gap:2px;padding:10px 8px;line-height:1.25}
+.timebar.labelled b{font-weight:400;font-size:1.02rem}
+@media (max-width:700px){.timebar.labelled{flex-direction:column;gap:8px}.timebar.labelled span{flex:1 1 auto!important;min-height:56px}}
+/* Heading-only audience cards */
+.who-card h3{margin:0;font-size:1.12rem}
