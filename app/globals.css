@@ -483,3 +483,6 @@ dialog.t-dlg::backdrop{background:rgba(8,17,22,.6)}
 .audio-btn.playing{background:var(--btn-bg);color:var(--btn-ink);border-color:var(--btn-bg)}
 @media (prefers-reduced-motion:no-preference){.audio-btn.playing i{animation:waveTag 1.6s ease-in-out infinite}}
 @media (max-width:420px){.tools{gap:6px}.theme-btn,.burger{width:38px;height:38px}}
+/* next/image writes width/height attributes; let CSS widths scale height
+   proportionally (more specific rules like .logo img{height:62px} still win) */
+img{height:auto}
