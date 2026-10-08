@@ -96,28 +96,41 @@ export default function CorporateHarmonyRetreatsPage() {
       </Sec>
 
       <Sec alt bg="service-corp-duration-bg.avif">
-        <h2>Duration, size and customisation</h2>
-        <dl className="facts">
-          {FACTS.map(([k, v]) => (
-            <div key={k}>
-              <dt>{k}</dt>
-              <dd>{v}</dd>
-            </div>
-          ))}
-        </dl>
-        <p>
-          Every experience begins with a conversation and is shaped around your purpose, group, time available and venue.
-          Sessions take place at your venue, an off-site location or the retreat venue, and Léhar Studio brings the
-          instruments.
-        </p>
-      </Sec>
-
-      <Sec bg="service-corp-price-bg.avif">
-        <h2>Pricing and quotation</h2>
-        <p>
-          Corporate and retreat experiences are priced individually, depending on format, group size, venue and travel. A
-          written quotation is provided before booking is confirmed.
-        </p>
+        <div className="two card-pair">
+          <article className="glass-card">
+            <h2 className="has-ico">
+              <span className="card-ico">
+                <i aria-hidden="true" className="fa-solid fa-hourglass-half" />
+              </span>
+              Duration &amp; size
+            </h2>
+            <dl className="facts">
+              {FACTS.map(([k, v]) => (
+                <div key={k}>
+                  <dt>{k}</dt>
+                  <dd>{v}</dd>
+                </div>
+              ))}
+            </dl>
+            <p>
+              Every experience begins with a conversation and is shaped around your purpose, group, time available and
+              venue. Léhar Studio brings the instruments.
+            </p>
+          </article>
+          <article className="glass-card">
+            <h2 className="has-ico">
+              <span className="card-ico">
+                <i aria-hidden="true" className="fa-solid fa-indian-rupee-sign" />
+              </span>
+              Pricing &amp; quotation
+            </h2>
+            <p>
+              Corporate and retreat experiences are priced individually, depending on format, group size, venue and
+              travel.
+            </p>
+            <p>A written quotation is provided before booking is confirmed.</p>
+          </article>
+        </div>
       </Sec>
 
       <ParallaxCta img="service-corp-cta.avif" id="enquire">

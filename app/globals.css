@@ -486,3 +486,64 @@ dialog.t-dlg::backdrop{background:rgba(8,17,22,.6)}
 /* next/image writes width/height attributes; let CSS widths scale height
    proportionally (more specific rules like .logo img{height:62px} still win) */
 img{height:auto}
+
+/* =========================================================
+   Aji's review round 2 (Changes.docx)
+   ========================================================= */
+/* Solid navbar: page content no longer bleeds through (as fixed on Rent Worx) */
+header.site{background:var(--primary);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:0 6px 18px -12px rgba(8,17,22,.35)}
+/* Logo further left and bigger: header runs wider than the page content */
+header.site .wrap.nav{max-width:1400px}
+.logo img{height:74px}
+.logo{font-size:1.65rem}
+@media (max-width:700px){.logo img{height:56px}.logo{font-size:1.3rem}}
+/* Home: first-visit stages and support items as 3-column cards */
+.stage-cards{margin-top:1.6rem}
+.stage-card{text-align:center}
+.stage-card .card-ico{margin:0 auto 12px}
+.stage-time{font-family:var(--label);letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;color:var(--accent-text);margin:0 0 .2rem}
+.stage-card h3{margin:0 0 .4rem}.stage-card p:last-child{margin:0}
+.focus-list.c3{grid-template-columns:repeat(3,1fr)}
+.focus-list.c3 .focus-item{grid-template-columns:84px 1fr}.focus-list.c3 .focus-ico{font-size:1.8rem}
+@media (max-width:1000px){.focus-list.c3{grid-template-columns:1fr 1fr}}
+@media (max-width:700px){.focus-list.c3{grid-template-columns:1fr}}
+/* Home: offering cards with a photo on top */
+.offer-card{padding:0 0 22px;overflow:hidden;display:flex;flex-direction:column}
+.offer-card>*:not(.offer-img){padding:0 24px}
+.offer-img{margin:0 0 18px;aspect-ratio:16/10;overflow:hidden}
+.offer-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.offer-card:hover .offer-img img{transform:scale(1.06)}
+.offer-card h3{margin-top:0}.offer-card>div{flex:1}
+/* About: every timeline photo in the same 3:2 frame as the first */
+.story.uniform .chap-img img{aspect-ratio:3/2;max-height:none;object-fit:cover;object-position:center top}
+/* About: principles as long cards stacked one per row */
+.principles{display:flex;flex-direction:column;gap:16px;margin:1.6rem 0}
+.principle{display:flex;align-items:center;gap:24px;padding:20px 28px}
+.principle h3{margin:0 0 .2rem}.principle p{margin:0}
+.principle-n{flex:none;font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--accent)}
+/* Services: four pathway cards in a single row */
+.cards.c4{grid-template-columns:repeat(4,1fr);gap:18px}
+.cards.c4 .glass-card{padding:22px}
+@media (max-width:1100px){.cards.c4{grid-template-columns:1fr 1fr}}
+@media (max-width:700px){.cards.c4{grid-template-columns:1fr}}
+/* Corporate: facts inside a card */
+.card-pair .facts{grid-template-columns:1fr;margin:1rem 0}
+/* Music Therapy: small per-section player */
+.mplayer{display:flex;align-items:center;gap:14px;max-width:440px;margin-top:1.2rem;padding:10px 16px 10px 10px;border-radius:999px;background:var(--glass-bg);border:1px solid var(--glass-border)}
+.mplayer-btn{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:var(--btn-bg);color:var(--btn-ink);cursor:pointer;font-size:1rem;transition:var(--transition)}
+.mplayer-btn:hover:not(:disabled){transform:scale(1.06)}
+.mplayer-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.mplayer-title{font-family:var(--label);font-size:.9rem;color:var(--accent-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mplayer-seek{width:100%;accent-color:var(--accent);height:4px;cursor:pointer}
+.mplayer-time{flex:none;font-size:.82rem;color:var(--text-muted);font-variant-numeric:tabular-nums}
+.mplayer.is-empty{opacity:.6}.mplayer.is-empty .mplayer-btn,.mplayer.is-empty .mplayer-seek{cursor:not-allowed}
+/* FAQs: narrower group tabs (icon, heading, count in one line) */
+.tabs{display:flex;flex-wrap:wrap;gap:10px}
+.tabs button{flex-direction:row;gap:10px;padding:10px 16px;border-radius:999px;width:auto}
+.tabs button span{position:static;margin:0}
+.tabs .tab-ico{font-size:1rem}
+@media (max-width:900px){.tabs{display:flex}}
+/* Booking: form photo without the edge fade */
+.form-img img{-webkit-mask-image:none;mask-image:none}
+.form-img{margin:14px;border-radius:14px;overflow:hidden}
+@media (max-width:900px){.form-img img{-webkit-mask-image:none;mask-image:none}}

@@ -39,8 +39,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: title, template: "%s" },
   description,
-  openGraph: { type: "website", siteName: "Léhar Studio", title, description, url: "/" },
-  twitter: { card: "summary_large_image", title, description },
+  openGraph: {
+    type: "website",
+    siteName: "Léhar Studio",
+    title,
+    description,
+    url: "/",
+    // PNG of lehar-logo-light (Aji's pick); share previews don't support AVIF.
+    images: [{ url: "/og-lehar.png", width: 1200, height: 630, alt: "Léhar Studio" }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: ["/og-lehar.png"] },
   icons: { icon: "/images/lehar-logo-dark.avif" },
 };
 

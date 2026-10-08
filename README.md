@@ -50,12 +50,23 @@ Checks before pushing: `pnpm build` and `pnpm lint`.
 
 - `NEXT_PUBLIC_SITE_URL`: production domain, used for canonical URLs, OG tags, sitemap, robots and JSON-LD. Still a placeholder (`https://www.example.com`) until the domain is confirmed.
 
+## Review round 2 (Aji's Changes.docx)
+
+- **All pages:** solid navbar (no bleed-through), logo further left and bigger, share image `public/og-lehar.png` (1200×630, made from `lehar-logo-light`; previews don't support AVIF), Music Therapy images switched to Aji's AVIFs
+- **Home:** "Experience The Resonance" intro; first-visit stages, support items and offerings as 3-column cards (offerings with photos); "Who is Léhar Studio for?" removed; Philosophy moved to About; "Ways to Ride the Wave"
+- **About:** timeline photos in one 3:2 frame; Mission / Vision / Philosophy as 3 cards; Principles as full-width stacked cards
+- **Services:** four pathway cards in one row
+- **Group:** "Up to 10, customisable*" with a note to discuss with Kavitha; Journey text and time bar left, image right; Venue / Come ready / Bring the bowls as 3 cards
+- **Corporate:** Duration and Pricing as 2 cards side by side
+- **Music Therapy:** a small player in each section (`components/MusicPlayer.tsx`); only one sound plays at a time, including the header's bowl music
+- **FAQs:** narrower tab pills (icon, heading, count)
+- **Booking:** form photo shown in a rounded frame without the edge fade
+
 ## Open items
 
+- **Music Therapy tracks (Aji choosing):** add 4 royalty-free binaural-beats files to `public/audio/` and set `track` on each chapter in `app/music-therapy/page.tsx`. Until then the players show "Track coming soon".
 - Real domain: set `NEXT_PUBLIC_SITE_URL` on Vercel.
-- 7-chakra image for the Corporate intro (change request), not in the media folder yet.
-- Social-share image (`og-lehar.jpg`) and a hero video poster were never supplied.
-- Media weight: the hero video is 16 MB and some Music Therapy JPGs are 10–23 MB. `next/image` serves resized versions, but compressing the originals would speed up builds and the repo.
+- Hero video (16 MB) could still be compressed.
 
 ## Deploy
 

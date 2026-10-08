@@ -82,7 +82,7 @@ export default function AboutKavithaPage() {
 
       <Sec alt>
         <h2>The One Who Kept Going</h2>
-        <ol className="story">
+        <ol className="story uniform">
           {STORY.map((c) => (
             <li key={c.title} className="chap">
               <div className="chap-text">
@@ -110,7 +110,7 @@ export default function AboutKavithaPage() {
       </Sec>
 
       <Sec bg="about-mission-vision-bg.avif">
-        <div className="cards c2">
+        <div className="cards">
           <article className="glass-card">
             <h3 className="has-ico">
               <span className="card-ico">
@@ -135,16 +135,33 @@ export default function AboutKavithaPage() {
               for.
             </p>
           </article>
+          <article className="glass-card">
+            <h3 className="has-ico">
+              <span className="card-ico">
+                <i aria-hidden="true" className="fa-solid fa-water" />
+              </span>
+              Philosophy of the Wave
+            </h3>
+            <p>
+              Léhar means wave. A wave does not force its way; it carries. Here there is nothing to perform and no need to
+              quiet the mind. Just lie down, and let the sound carry you.
+            </p>
+          </article>
         </div>
       </Sec>
 
       <Sec alt bg="about-principles-bg.avif">
         <h2>The Principles That Guide My Work</h2>
-        <div className="cards">
-          {PRINCIPLES.map((p) => (
-            <article key={p.title} className="glass-card">
-              <h3>{p.title}</h3>
-              <p>{p.line}</p>
+        <div className="principles">
+          {PRINCIPLES.map((p, i) => (
+            <article key={p.title} className="glass-card principle">
+              <span className="principle-n" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3>{p.title}</h3>
+                <p>{p.line}</p>
+              </div>
             </article>
           ))}
         </div>

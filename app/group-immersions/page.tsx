@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const FACTS = [
   ["Duration", "About 60 minutes"],
-  ["Group size", "Up to 10"],
+  ["Group size", "Up to 10, customisable*"],
   ["Where", "Organiser's indoor venue"],
   ["Age", "12 and above"],
   ["Investment", "On request"],
@@ -53,25 +53,28 @@ export default function GroupImmersionsPage() {
             </div>
           ))}
         </dl>
+        <p className="mini">*Customisable: discuss your group size with Kavitha.</p>
       </Sec>
 
-      <Sec alt bg="service-gsb-journey.avif">
-        <h2>A journey, not a performance</h2>
-        <p>
-          Ground and breathe, then sound, then quiet. Sound moves through different tones, volumes and silences, then
-          softens, so you return at an unhurried pace.
-        </p>
-        <div
-          className="timebar"
-          role="img"
-          aria-label="15 minutes grounding and breathwork; 40 minutes immersive sound; 5 minutes quiet"
-        >
-          <span style={{ flex: "0 0 25%", background: "var(--wash)" }}>15 · Ground &amp; breathe</span>
-          <span style={{ flex: "1 1 66%", background: "var(--accent)", color: "var(--bg)" }}>40 · Immersive sound journey</span>
-          <span style={{ flex: "0 0 8.3%", minWidth: "3.6rem", background: "var(--surface)", border: "1px solid var(--line)" }}>
-            5 · Quiet
-          </span>
-        </div>
+      <Sec alt>
+        <Split img="service-gsb-journey.avif" still>
+          <h2>A journey, not a performance</h2>
+          <p>
+            Ground and breathe, then sound, then quiet. Sound moves through different tones, volumes and silences, then
+            softens, so you return at an unhurried pace.
+          </p>
+          <div
+            className="timebar"
+            role="img"
+            aria-label="15 minutes grounding and breathwork; 40 minutes immersive sound; 5 minutes quiet"
+          >
+            <span style={{ flex: "0 0 25%", background: "var(--wash)" }}>15 · Ground</span>
+            <span style={{ flex: "1 1 66%", background: "var(--accent)", color: "var(--bg)" }}>40 · Sound journey</span>
+            <span style={{ flex: "0 0 8.3%", minWidth: "3.6rem", background: "var(--surface)", border: "1px solid var(--line)" }}>
+              5 · Quiet
+            </span>
+          </div>
+        </Split>
       </Sec>
 
       <Sec>
@@ -90,33 +93,47 @@ export default function GroupImmersionsPage() {
       </Sec>
 
       <Sec alt bg="service-gsb-venue-bg.avif">
-        <h2>Venue and location</h2>
-        <p>
-          Held at the organiser&apos;s chosen venue: a quiet, private, closed indoor room large enough for everyone to lie
-          down comfortably. <b>In person only</b>, because the resonance of live instruments cannot be reproduced online.
-        </p>
-      </Sec>
-
-      <Sec>
-        <h2>Come ready</h2>
-        <Split img="service-gsb-come-ready.avif" still>
-          <Verse lines={["Loose clothes, a blanket, water near,", "arrive early, and the calm is here."]} />
-          <ul>
-            <li>Arrive 10 to 15 minutes early; doors close once the session begins.</li>
-            <li>Keep phones off or on silent.</li>
-            <li>Share any relevant health information with Kavitha in advance.</li>
-          </ul>
-        </Split>
-      </Sec>
-
-      <Sec alt bg="service-gsb-bring-bowls-bg.avif">
-        <h2>Bring the bowls to your group</h2>
-        <p>Share your date, venue and group size, and Kavitha will talk through the arrangements before confirming.</p>
-        <p>
-          <Link className="btn" href="/booking?service=group">
-            Enquire About a Group Sound Bath
-          </Link>
-        </p>
+        <div className="cards">
+          <article className="glass-card">
+            <h3 className="has-ico">
+              <span className="card-ico">
+                <i aria-hidden="true" className="fa-solid fa-location-dot" />
+              </span>
+              Venue
+            </h3>
+            <p>
+              Held at the organiser&apos;s chosen venue: a quiet, private, closed indoor room where everyone can lie down
+              comfortably. <b>In person only</b>, because live resonance cannot be reproduced online.
+            </p>
+          </article>
+          <article className="glass-card">
+            <h3 className="has-ico">
+              <span className="card-ico">
+                <i aria-hidden="true" className="fa-solid fa-person-walking-arrow-right" />
+              </span>
+              Come ready
+            </h3>
+            <ul>
+              <li>Arrive 10 to 15 minutes early; doors close once the session begins.</li>
+              <li>Keep phones off or on silent.</li>
+              <li>Share any relevant health information with Kavitha in advance.</li>
+            </ul>
+          </article>
+          <article className="glass-card">
+            <h3 className="has-ico">
+              <span className="card-ico">
+                <i aria-hidden="true" className="fa-solid fa-bell" />
+              </span>
+              Bring the bowls
+            </h3>
+            <p>Share your date, venue and group size, and Kavitha will talk through the arrangements before confirming.</p>
+            <p>
+              <Link className="btn" href="/booking?service=group">
+                Enquire
+              </Link>
+            </p>
+          </article>
+        </div>
         <p className="mini">
           Everyone experiences sound differently and no outcome is guaranteed. Sound immersion is a wellbeing experience,
           not a substitute for medical or mental health care.

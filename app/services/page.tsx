@@ -61,7 +61,7 @@ export default function ServicesPage() {
       </Sec>
 
       <Sec alt bg="service-main-cards-bg.avif">
-        <div className="cards c2">
+        <div className="cards c4">
           {SERVICES.map((s) => (
             <article key={s.title} className="glass-card aligned" style={{ "--rows": "4" } as React.CSSProperties}>
               <h3>{s.title}</h3>
