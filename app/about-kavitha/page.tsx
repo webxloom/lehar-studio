@@ -67,7 +67,7 @@ export default function AboutKavithaPage() {
       <Sec>
         <div className="intro-grid">
           <div className="portrait" aria-hidden="true">
-            <Img name="about-kp-portrait.avif" className="fade-all" sizes="(max-width: 1000px) 90vw, 380px" />
+            <Img name="about-kp-portrait.avif" sizes="(max-width: 1000px) 90vw, 380px" />
           </div>
           <div>
             <Verse lines={["She kept the world going, year on year,", "and now she helps you pause right here."]} />
@@ -95,12 +95,12 @@ export default function AboutKavithaPage() {
                 ))}
               </div>
               <figure className="chap-img">
-                <Img name={c.img} className="fade-all" />
+                <Img name={c.img} />
               </figure>
             </li>
           ))}
         </ol>
-        <blockquote className="verse pull">
+        <blockquote className="verse pull verse-center">
           <p>
             I do not believe anyone needs to be “fixed”, or that there is one correct way to experience sound. What I can
             offer is a carefully held space where you feel safe enough to slow down. You are welcome exactly as you are.
@@ -150,20 +150,29 @@ export default function AboutKavithaPage() {
         </div>
       </Sec>
 
-      <Sec alt bg="about-principles-bg.avif">
+      <Sec alt>
         <h2>The Principles That Guide My Work</h2>
-        <div className="principles">
-          {PRINCIPLES.map((p, i) => (
-            <article key={p.title} className="glass-card principle">
-              <span className="principle-n" aria-hidden="true">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3>{p.title}</h3>
-                <p>{p.line}</p>
-              </div>
-            </article>
-          ))}
+        <div className="principles-layout">
+          <div className="principles">
+            {PRINCIPLES.map((p, i) => (
+              <article key={p.title} className="glass-card principle">
+                <span className="principle-n" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3>{p.title}</h3>
+                  <p>{p.line}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <figure className="principles-image">
+            <Img
+              name="about-principles.avif"
+              alt="Singing bowls and a peaceful space reflecting the principles of Léhar Studio"
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
+          </figure>
         </div>
       </Sec>
 

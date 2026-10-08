@@ -92,7 +92,6 @@ export function PhotoBanner({
   title,
   sub,
   pos,
-  tall,
 }: {
   img: string;
   crumbs: Crumb[];
@@ -100,11 +99,12 @@ export function PhotoBanner({
   title: string;
   sub?: string;
   pos?: "left" | "right";
-  /** show the whole photo (no max-height crop), as on Aji's one-to-one page */
-  tall?: boolean;
 }) {
   return (
-    <section className={`banner has-photo${pos ? ` pos-${pos}` : ""}${tall ? " banner-tall" : ""}`}>
+    <section
+      className={`banner has-photo${pos ? ` pos-${pos}` : ""}`}
+      style={{ "--banner-img": `url('/images/${img}')` } as React.CSSProperties}
+    >
       <Img name={img} className="banner-img" sizes="100vw" priority />
       <div className="banner-in">
         <div className="wrap">

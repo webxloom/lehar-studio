@@ -12,6 +12,7 @@ export const IMAGE_SIZES: Record<string, [number, number]> = {
   "about-kp-portrait.avif": [2048, 2048],
   "about-mission-vision-bg.avif": [1920, 1076],
   "about-principles-bg.avif": [1920, 1282],
+  "about-principles.avif": [1920, 1280],
   "book-banner.avif": [5568, 3712],
   "book-before-coming-bg.avif": [6522, 4348],
   "book-cta.avif": [1920, 1076],

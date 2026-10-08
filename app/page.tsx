@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/home/Hero";
 import Testimonials from "@/components/home/Testimonials";
-import { Img, ParallaxCta, Sec, Split, Verse } from "@/components/ui";
+import { Img, ParallaxCta, Sec, Verse } from "@/components/ui";
 import { TESTIMONIALS } from "@/lib/testimonials";
 
 export const metadata: Metadata = {
@@ -37,7 +37,6 @@ const SUPPORT = [
 
 const WAYS = [
   {
-    eyebrow: "Group experiences",
     title: "Breathwork & Sound Baths",
     line: "For communities, studios, private groups and curated gatherings.",
     href: "/group-immersions",
@@ -45,7 +44,6 @@ const WAYS = [
     cta: "Explore Group",
   },
   {
-    eyebrow: "One-to-one",
     title: "Personalised 1:1",
     line: "A more individual sound, breath and healing experience, created around the person.",
     href: "/one-to-one",
@@ -53,12 +51,18 @@ const WAYS = [
     cta: "Explore 1:1",
   },
   {
-    eyebrow: "Organisations",
     title: "Corporate & Retreats",
-    line: "Wellbeing experiences for teams, leaders and retreats, designed to create meaningful pauses within demanding environments.",
+    line: "Wellbeing sessions for teams and retreats, creating space to pause and reconnect.",
     href: "/corporate-harmony-retreats",
     img: "home-corp-harmony.avif",
     cta: "Explore Corporate",
+  },
+  {
+    title: "Music Therapy",
+    line: "Personalised music experiences that support expression, connection and wellbeing.",
+    href: "/music-therapy",
+    img: "home-music-therapy.avif",
+    cta: "Explore Music Therapy",
   },
 ];
 
@@ -69,7 +73,27 @@ export default function HomePage() {
 
       <Sec id="intro">
         <h2>Experience The Resonance</h2>
-        <Split img="home-resonance-intro.avif">
+        <div className="home-split home-resonance">
+          <div className="home-main-feature">
+            <Img
+              name="home-resonance-intro.avif"
+              alt="A sound immersion in a calm, welcoming space"
+              className="home-feature-image home-feature-full"
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
+          </div>
+          <div className="home-main-feature home-intro-copy">
+            <p>
+              Léhar Studio creates immersive wellbeing experiences that bring together grounding, conscious breathwork,
+              sound and music, creating space for the body to slow down, the mind to settle and stillness to emerge.
+            </p>
+            <p>
+              Sound and vibration create an environment in which you can gradually slow down, turn inward and experience
+              a deeper sense of rest and stillness.
+            </p>
+          </div>
+        </div>
+        <div className="home-resonance-followup">
           <Verse
             lines={[
               "The world is loud, the days run fast,",
@@ -77,21 +101,21 @@ export default function HomePage() {
               "Whether you lead, or love, or care,",
               "true quiet is hard to find out there.",
             ]}
+            className="verse-center"
           />
-          <p>
-            Léhar Studio creates immersive wellbeing experiences that bring together grounding, conscious breathwork,
-            sound and music, creating space for the body to slow down, the mind to settle and stillness to emerge.
-          </p>
-          <p>
-            Sound and vibration create an environment in which you can gradually slow down, turn inward and experience a
-            deeper sense of rest and stillness.
-          </p>
-        </Split>
+          <figure className="home-wave-image">
+            <Img
+              name="home-gentle-pause-bowl.avif"
+              alt="A singing bowl ready for a gentle pause"
+              sizes="(max-width: 900px) 60vw, 30vw"
+            />
+          </figure>
+        </div>
       </Sec>
 
       <Sec id="arc" alt bg="home-arc-bg.avif">
         <h2>The Arc of a Léhar Session</h2>
-        <Verse lines={["Five steps, one wave."]} />
+        <Verse lines={["Five steps, one wave."]} className="verse-center" />
         <ol className="arc circles">
           {ARC.map((s) => (
             <li key={s.title}>
@@ -105,71 +129,92 @@ export default function HomePage() {
         </ol>
       </Sec>
 
-      <Sec id="first-visit">
+      <Sec id="first-visit" className="home-first-visit-section">
         <h2>What can a first-time visitor expect?</h2>
         <p className="eyebrow">Grounding · Breath · Sound</p>
-        <Split img="home-first-time-visit.avif">
-          <Verse
-            lines={[
-              "Always switched on, always on the run,",
-              "the mind stays noisy, the body undone.",
-              "Here, for one unhurried hour,",
-              "nothing is asked, and rest has power.",
-            ]}
-          />
-          <p>
-            A session begins with grounding, bringing attention back to the body. Structured breathwork calms the nervous
-            system so mind and body can receive sound and vibration with ease. You return lighter and steadier, with
-            clearer focus and more mental space.
-          </p>
-        </Split>
-        <div className="cards stage-cards">
-          {STAGES.map((st) => (
-            <article key={st.title} className="glass-card stage-card">
-              <span className="card-ico">
-                <i aria-hidden="true" className={`fa-solid ${st.icon}`} />
-              </span>
-              <p className="stage-time">{st.time}</p>
-              <h3>{st.title}</h3>
-              <p>{st.line}</p>
-            </article>
-          ))}
+        <div className="home-split home-70-30">
+          <div className="home-main-feature">
+            <Img
+              name="home-first-time-visit.avif"
+              alt="A quiet space prepared for a first-time sound session"
+              className="home-feature-image home-feature-full home-first-visit-image"
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
+            <p>
+              A session begins with grounding, bringing attention back to the body. Structured breathwork calms the nervous
+              system so mind and body can receive sound and vibration with ease. You return lighter and steadier, with
+              clearer focus and more mental space.
+            </p>
+          </div>
+          <div className="home-side-stack">
+            {STAGES.map((st) => (
+              <article key={st.title} className="glass-card home-small-card">
+                <span className="card-ico">
+                  <i aria-hidden="true" className={`fa-solid ${st.icon}`} />
+                </span>
+                <div>
+                  <p className="stage-time">{st.time}</p>
+                  <h3>{st.title}</h3>
+                  <p>{st.line}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
+        <Verse
+          lines={[
+            "Always switched on, always on the run,",
+            "the mind stays noisy, the body undone.",
+            "Here, for one unhurried hour,",
+            "nothing is asked, and rest has power.",
+          ]}
+          className="verse-center home-section-quote"
+        />
       </Sec>
 
       <Sec id="intentions" alt>
         <h2>What We Gently Support</h2>
-        <Split img="home-gentle-support.avif">
-          <Verse lines={["Sound does not only fill the air,", "it moves through you, and tension eases there."]} />
-          <p>
-            Lie down, close your eyes, and receive. Nothing to learn, nothing to perform, nothing to get right. The thing
-            people say most afterwards is simply how relaxed they feel.
-          </p>
-        </Split>
-        <div className="focus-list c3">
-          {SUPPORT.map((s) => (
-            <article key={s.title} className="glass-card focus-item">
-              <div className="focus-ico">
-                <i aria-hidden="true" className={`fa-solid ${s.icon}`} />
-              </div>
-              <div className="focus-body">
-                <h3>{s.title}</h3>
-                <p>{s.line}</p>
-              </div>
-            </article>
-          ))}
+        <div className="home-split home-50-50">
+          <div className="home-main-feature">
+            <Img
+              name="home-gentle-support.avif"
+              alt="A peaceful sound bath with singing bowls"
+              className="home-feature-image home-feature-full home-support-feature-image"
+              sizes="(max-width: 900px) 100vw, 50vw"
+            />
+            <p>
+              Lie down, close your eyes, and receive. Nothing to learn, nothing to perform, nothing to get right. The
+              thing people say most afterwards is simply how relaxed they feel.
+            </p>
+          </div>
+          <div className="home-side-stack home-support-stack">
+            {SUPPORT.map((s) => (
+              <article key={s.title} className="glass-card home-small-card home-support-card">
+                <span className="card-ico">
+                  <i aria-hidden="true" className={`fa-solid ${s.icon}`} />
+                </span>
+                <div>
+                  <h3>{s.title}</h3>
+                  <p>{s.line}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
+        <Verse
+          lines={["Sound does not only fill the air,", "it moves through you, and tension eases there."]}
+          className="verse-center home-section-quote"
+        />
       </Sec>
 
       <Sec id="ways" bg="home-three-ways-bg.avif">
         <h2>Ways to Ride the Wave</h2>
-        <div className="cards">
+        <div className="cards c4">
           {WAYS.map((w) => (
             <article key={w.title} className="glass-card offer-card">
               <figure className="offer-img">
-                <Img name={w.img} sizes="(max-width: 1000px) 90vw, 360px" />
+                <Img name={w.img} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 25vw" />
               </figure>
-              <p className="eyebrow">{w.eyebrow}</p>
               <h3>{w.title}</h3>
               <div>
                 <p>{w.line}</p>
@@ -188,13 +233,7 @@ export default function HomePage() {
 
       <ParallaxCta img="home-cta.avif" id="begin">
         <h2>The First Step</h2>
-        <Verse
-          lines={[
-            "Give yourself one hour of real quiet.",
-            "Let bowls and frequencies find the parts of you that forgot how to switch off.",
-          ]}
-        />
-        <p>Begin with a single session. If the calm feels like home, we can weave an ongoing rhythm into your life.</p>
+        <p>Begin with one quiet hour for yourself.</p>
         <p>
           <Link className="btn" href="/booking">
             Book Your First Step

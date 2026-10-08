@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PhotoBanner, Sec, Split, Verse } from "@/components/ui";
+import { ParallaxCta, PhotoBanner, Sec, Split, Verse } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Personalised One-to-One Sound Immersion | Léhar Studio, Mulund East",
@@ -41,7 +41,6 @@ export default function OneToOnePage() {
     <>
       <PhotoBanner
         img="service-one-banner.avif"
-        tall
         crumbs={[
           { href: "/", label: "Home" },
           { href: "/services", label: "Services" },
@@ -87,7 +86,7 @@ export default function OneToOnePage() {
         </p>
       </Sec>
 
-      <Sec bg="service-one-session-bg.avif">
+      <Sec bg="service-one-session-bg.avif" className="service-one-session">
         <h2>Your session, step by step</h2>
         <ol className="arc circles">
           {STEPS.map((s) => (
@@ -118,10 +117,10 @@ export default function OneToOnePage() {
         </p>
       </Sec>
 
-      <Sec bg="service-one-first-step-bg.avif">
+      <ParallaxCta img="service-one-first-step-bg.avif" id="one-to-one-next">
         <h2>The first step is a conversation</h2>
         <Verse lines={["Lie down, and let it come to you,", "nothing to do, and no one to be."]} />
-        <p>
+        <p className="one-to-one-cta-copy">
           Tell Kavitha what has led you here. She will explain the format, discuss suitability and arrange the sessions
           with you.
         </p>
@@ -133,7 +132,7 @@ export default function OneToOnePage() {
         <p className="mini">
           Sound immersion is a wellbeing experience, not a replacement for medical, psychological or psychiatric care.
         </p>
-      </Sec>
+      </ParallaxCta>
     </>
   );
 }

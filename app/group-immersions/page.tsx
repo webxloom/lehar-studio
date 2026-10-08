@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PhotoBanner, Sec, Split, Verse } from "@/components/ui";
+import { Img, PhotoBanner, Sec, Split, Verse } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Group Sound Baths in Mumbai | Léhar Studio",
@@ -37,14 +37,25 @@ export default function GroupImmersionsPage() {
       />
 
       <Sec>
-        <Split img="service-gsb-intro.avif" still>
-          <Verse lines={["Lie down together, let the bowls take flight,", "and rest as one in the resonant light."]} />
-          <p>
-            A guided, shared experience. You lie down comfortably and receive sound from Himalayan singing bowls, gong and
-            other resonant instruments. There is nothing to learn, perform or get right. Simply get comfortable, listen,
-            and let it unfold.
-          </p>
-        </Split>
+        <div className="group-intro">
+          <Img
+            name="service-gsb-intro.avif"
+            alt="A group sound bath with Himalayan singing bowls"
+            className="group-intro-image"
+            sizes="(max-width: 900px) 100vw, 50vw"
+          />
+          <div className="group-intro-copy">
+            <p>
+              A guided, shared experience. You lie down comfortably and receive sound from Himalayan singing bowls, gong
+              and other resonant instruments. There is nothing to learn, perform or get right. Simply get comfortable,
+              listen, and let it unfold.
+            </p>
+            <Verse
+              lines={["Lie down together, let the bowls take flight,", "and rest as one in the resonant light."]}
+              className="verse-center"
+            />
+          </div>
+        </div>
         <dl className="facts">
           {FACTS.map(([k, v]) => (
             <div key={k}>
@@ -77,7 +88,7 @@ export default function GroupImmersionsPage() {
         </Split>
       </Sec>
 
-      <Sec>
+      <Sec bg="service-gsb-who.avif" className="group-who-section">
         <h2>Who it is for</h2>
         <div className="who-cards">
           {WHO.map((w) => (
@@ -92,7 +103,7 @@ export default function GroupImmersionsPage() {
         <p className="note gold-note">No previous experience with meditation, breathwork or sound is required.</p>
       </Sec>
 
-      <Sec alt bg="service-gsb-venue-bg.avif">
+      <Sec alt bg="service-gsb-venue-bg.avif" className="group-venue-section">
         <div className="cards">
           <article className="glass-card">
             <h3 className="has-ico">

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PhotoBanner, Sec, Split, Verse } from "@/components/ui";
+import { Img, ParallaxCta, PhotoBanner, Sec, Verse } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Services | Group, One-to-One & Corporate Sound Immersion | Léhar Studio",
@@ -50,14 +50,23 @@ export default function ServicesPage() {
         title="Ways to Ride the Wave"
       />
 
-      <Sec>
-        <Split img="service-overview-intro.avif" still>
-          <Verse lines={["Sound, breath and music, ways to receive:", "shared, personal, or made for a team."]} />
+      <Sec className="service-overview-intro">
+        <Verse
+          lines={["Sound, breath and music, ways to receive:", "shared, personal, or made for a team."]}
+          className="verse-center service-overview-intro-quote"
+        />
+        <Img
+          name="service-overview-intro.avif"
+          alt="A calm sound immersion space prepared for a session"
+          className="service-overview-intro-image"
+          sizes="(max-width: 900px) 100vw, 90vw"
+        />
+        <div className="service-overview-intro-copy">
           <p>
             Each Léhar Studio experience is a calm, guided space where you step away from everyday activity, settle
             comfortably and receive, without needing to meditate, concentrate hard or reach any outcome.
           </p>
-        </Split>
+        </div>
       </Sec>
 
       <Sec alt bg="service-main-cards-bg.avif">
@@ -79,7 +88,7 @@ export default function ServicesPage() {
         </div>
       </Sec>
 
-      <Sec id="services-science" bg="service-overview-anchor-breath-bg.avif">
+      <Sec id="services-science" bg="service-overview-anchor-breath-bg.avif" className="service-overview-anchor">
         <h2>Why Every Session Begins With Anchor and Breath</h2>
         <div className="cards c2">
           <article className="glass-card">
@@ -113,14 +122,14 @@ export default function ServicesPage() {
         </div>
       </Sec>
 
-      <Sec alt bg="service-overview-which-bg.avif">
+      <ParallaxCta img="service-overview-which-bg.avif" id="service-overview-cta">
         <h2>Which one is for me?</h2>
         <Verse
           lines={[
             "Whichever wave you choose, the intention stays: a welcome, an unhurried pace, nothing to perform, and every response to sound respected.",
           ]}
         />
-        <p>Not sure yet? Tell us a little about yourself and we will help you choose.</p>
+        <p className="service-overview-choice-copy">Not sure yet? Tell us a little about yourself and we will help you choose.</p>
         <p>
           <Link className="btn" href="/booking">
             Ask for Details
@@ -129,7 +138,7 @@ export default function ServicesPage() {
             Read the FAQs
           </Link>
         </p>
-      </Sec>
+      </ParallaxCta>
     </>
   );
 }
