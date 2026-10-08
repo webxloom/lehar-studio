@@ -38,7 +38,6 @@ export default function CorporateHarmonyRetreatsPage() {
       />
 
       <Sec>
-        {/* TODO(Aji): swap for the 7-chakra image requested in the change request (not in the media folder yet). */}
         <Split img="service-corp-intro.avif" still>
           <Verse lines={["Busy calendars, back-to-back days,", "make room for a pause that quietly stays."]} />
           <p>
