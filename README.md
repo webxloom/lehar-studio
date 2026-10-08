@@ -15,7 +15,7 @@ All routes are static (SSG).
 | `/services` | `services.html` | Table removed from "Which one is for me?"; Music Therapy added as a pathway; copy trimmed |
 | `/group-immersions` | `group-immersions.html` | Age "12 and above"; copy trimmed |
 | `/one-to-one` | `one-to-one.html` | Structure "Customisable as per requirements" (no eight-session course); copy trimmed |
-| `/corporate-harmony-retreats` | `corporate-harmony-retreats.html` | Heavy cuts; batch size "Customisable as per requirements"; **7-chakra image still needed** (see TODO in the page) |
+| `/corporate-harmony-retreats` | `corporate-harmony-retreats.html` | Heavy cuts; batch size "Customisable as per requirements"; intro image replaced by Aji in round 2 |
 | `/music-therapy` | **new**, from `old_wireframe_index_v1.0.html` | New page under Services; copy drawn from the Léhar Studio content docs |
 | `/faqs` | `faqs.html` | Answers updated to match the above; cancellation/refund policy moved here from Booking |
 | `/booking` | `booking.html` | Form only. WhatsApp + email enquiry (nothing stored); `?service=group\|one\|corp\|music` preselects |
