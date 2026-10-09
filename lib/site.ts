@@ -1,7 +1,8 @@
 // Single source of truth for studio details + navigation,
 // taken from Aji's static build (header, footer, JSON-LD).
 
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.example.com"; // TODO: real domain from Aji
+// Live at leharstudio.com (non-www redirects to www). NEXT_PUBLIC_SITE_URL can override per environment.
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.leharstudio.com";
 
 export const STUDIO = {
   name: "Léhar Studio",

@@ -48,7 +48,7 @@ Checks before pushing: `pnpm build` and `pnpm lint`.
 
 ## Environment
 
-- `NEXT_PUBLIC_SITE_URL`: production domain, used for canonical URLs, OG tags, sitemap, robots and JSON-LD. Still a placeholder (`https://www.example.com`) until the domain is confirmed.
+- `NEXT_PUBLIC_SITE_URL`: production domain, used for canonical URLs, OG tags, sitemap, robots and JSON-LD. Defaults to `https://www.leharstudio.com` (live), so no Vercel setting is needed.
 
 ## Review round 2 (Aji's Changes.docx)
 
@@ -71,7 +71,7 @@ Checks before pushing: `pnpm build` and `pnpm lint`.
 
 ## Open items
 
-- Real domain: set `NEXT_PUBLIC_SITE_URL` on Vercel.
+- None. Live at https://www.leharstudio.com
 
 ## Deploy
 
