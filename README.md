@@ -62,11 +62,16 @@ Checks before pushing: `pnpm build` and `pnpm lint`.
 - **FAQs:** narrower tab pills (icon, heading, count)
 - **Booking:** form photo shown in a rounded frame without the edge fade
 
+## Round 3
+
+- **Aji:** Home redesign (feature-image splits, side cards, centred verses, Music Therapy offering card), page design and image updates, 6 audio tracks in `public/audio/` wired into the Music Therapy players
+- **Hero video:** compressed from 16 MB to 3.8 MB (1080p, two-pass H.264 at 1650 kbps, `+faststart`, no audio track; SSIM 0.97 against the original). Added `hero-poster.avif`, shown instantly while the video loads
+- **Music Therapy:** "The Living Wisdom of Rāga" now plays `deep-sleep-vibration.mp3`. It had the same track as section 1. `deep-healing-freq.mp3` and `full-body-healing.mp3` are spare
+- `lib/images.ts` regenerated for the replaced images
+
 ## Open items
 
-- **Music Therapy tracks (Aji choosing):** add 4 royalty-free binaural-beats files to `public/audio/` and set `track` on each chapter in `app/music-therapy/page.tsx`. Until then the players show "Track coming soon".
 - Real domain: set `NEXT_PUBLIC_SITE_URL` on Vercel.
-- Hero video (16 MB) could still be compressed.
 
 ## Deploy
 

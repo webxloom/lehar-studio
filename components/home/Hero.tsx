@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section className="hero" aria-label="Welcome">
       {mounted && (
-        <video autoPlay muted loop playsInline aria-hidden="true">
+        <video autoPlay muted loop playsInline poster="/images/hero-poster.avif" aria-hidden="true">
           <source src="/images/hero-clip-waves-and-sunlight.mp4" type="video/mp4" />
         </video>
       )}

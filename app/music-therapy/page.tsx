@@ -35,7 +35,7 @@ const CHAPTERS: { eyebrow: string; title: string; img: string; text: string; tra
     title: "The Living Wisdom of Rāga",
     img: "music-wisdom.avif",
     text: "Raagas offer a distinctive musical language, and traditional wisdom holds that they influence mood, energy and states of mind. Chosen according to the atmosphere and intention of the session, never simply as background music, they may support rest, relaxation and emotional ease.",
-    track: "/audio/sound-bath-journey.mp3",
+    track: "/audio/deep-sleep-vibration.mp3",
   },
   {
     eyebrow: "The primordial sound",
