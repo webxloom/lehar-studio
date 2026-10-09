@@ -642,3 +642,12 @@ html:has(.service-overview-intro){scroll-behavior:auto}
 /* Hero video fades in over the poster once it can play */
 .hero video{opacity:0;transition:opacity 1.2s ease}
 .hero video.is-ready{opacity:1}
+/* Error pages (404, error, global-error) */
+.err-banner{padding:150px 0 130px;background:radial-gradient(ellipse at 50% 15%,#1b3a49,#0b1c24 62%,#050c10)}
+.err-banner .wrap{position:relative;z-index:1}
+.err-links{justify-content:center;margin:1.6rem 0}
+.err-links a{text-decoration:none}
+/* Header fit on tablets / small laptops (nav was wrapping after the bigger logo):
+   drop the Book button (Booking stays in the nav), then the wordmark beside the badge */
+@media (max-width:1180px) and (min-width:861px){.nav .btn.book{display:none}}
+@media (max-width:1000px) and (min-width:861px){.logo-text{display:none}}

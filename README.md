@@ -80,6 +80,14 @@ Checks before pushing: `pnpm build` and `pnpm lint`.
 - **Images:** generated widths capped at 2048px (`next.config.ts`).
 - **Content:** "Kavita" and "Lehar" normalised in testimonials; Group age "12+ (12–17 with guardian consent)"; Home intro names Mulund East, Mumbai; nav and footer say "Group Sound Baths".
 
+## Error pages
+
+- `app/not-found.tsx`: 404 for any unknown URL (returns 404 + noindex), inside the normal header and footer
+- `app/error.tsx`: shown if a page fails to render, with a "Try again" (`retry()`) button
+- `app/global-error.tsx`: last-resort page if the root layout fails; brings its own `<html>`/`<body>` and stylesheet
+- Shared look in `components/ErrorScreen.tsx`: wave banner, verse, quick links, WhatsApp/phone help
+- Header fit: below 1180px the Book button hides (Booking stays in the nav), and below 1000px the wordmark beside the logo badge hides, so the nav never wraps
+
 ## Open items
 
 - None. Live at https://www.leharstudio.com
