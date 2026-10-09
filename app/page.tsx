@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import Hero from "@/components/home/Hero";
 import Testimonials from "@/components/home/Testimonials";
 import { Img, ParallaxCta, Sec, Verse } from "@/components/ui";
 import { TESTIMONIALS } from "@/lib/testimonials";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Léhar Studio | Sound Healing & Breathwork in Mulund East, Mumbai",
   description:
     "Léhar Studio by Kavitha Prasad: grounding, structured breathwork and immersive sound for stress relief and deep rest. Group, one-to-one and corporate sessions in Mumbai.",
-  alternates: { canonical: "/" },
-};
+  path: "/",
+});
 
 const ARC = [
   { icon: "fa-chair", title: "Arrive and settle", line: "Set the day down." },
@@ -84,8 +84,8 @@ export default function HomePage() {
           </div>
           <div className="home-main-feature home-intro-copy">
             <p>
-              Léhar Studio creates immersive wellbeing experiences that bring together grounding, conscious breathwork,
-              sound and music, creating space for the body to slow down, the mind to settle and stillness to emerge.
+              Léhar Studio in Mulund East, Mumbai, creates immersive sound healing and breathwork experiences that bring
+              together grounding, conscious breathwork, sound and music, creating space for the body to slow down, the mind to settle and stillness to emerge.
             </p>
             <p>
               Sound and vibration create an environment in which you can gradually slow down, turn inward and experience

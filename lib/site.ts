@@ -33,7 +33,7 @@ export const NAV: NavItem[] = [
     label: "Services",
     children: [
       { href: "/services", label: "Overview" },
-      { href: "/group-immersions", label: "Group Immersions" },
+      { href: "/group-immersions", label: "Group Sound Baths" },
       { href: "/one-to-one", label: "1:1 Immersions" },
       { href: "/corporate-harmony-retreats", label: "Corporate Harmony & Retreats" },
       { href: "/music-therapy", label: "Music Therapy" },
@@ -46,7 +46,7 @@ export const NAV: NavItem[] = [
 export const FOOTER_LINKS = [
   { href: "/about-kavitha", label: "About Kavitha" },
   { href: "/services", label: "Services" },
-  { href: "/group-immersions", label: "Group Immersions" },
+  { href: "/group-immersions", label: "Group Sound Baths" },
   { href: "/one-to-one", label: "1:1 Immersions" },
   { href: "/corporate-harmony-retreats", label: "Corporate Harmony & Retreats" },
   { href: "/music-therapy", label: "Music Therapy" },

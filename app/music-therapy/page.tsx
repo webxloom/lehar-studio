@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import MusicPlayer from "@/components/MusicPlayer";
 import { Img, ParallaxCta, PhotoBanner, Sec, Verse } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Music Therapy | Raaga, Rhythm & Nāda | Léhar Studio, Mumbai",
   description:
     "Personalised music therapy at Léhar Studio, Mulund East: Indian raagas, rhythm, voice, mantra and frequency, shaped around you to support emotional ease, rest and a quieter mind.",
-  alternates: { canonical: "/music-therapy" },
-};
+  path: "/music-therapy",
+});
 
 // New page from Aji's change request, laid out after the "Music Therapy"
 // section of old_wireframe_index_v1.0.html, with copy drawn from the

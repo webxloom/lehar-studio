@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { ParallaxCta, PhotoBanner, Sec, Split, Verse } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Corporate Sound Wellbeing & Retreat Experiences | Léhar Studio",
   description:
     "Bespoke sound, breath and music experiences for teams, organisations and retreats in Mumbai and beyond. Plan your venue, format and quotation with Léhar Studio.",
-  alternates: { canonical: "/corporate-harmony-retreats" },
-};
+  path: "/corporate-harmony-retreats",
+});
 
 const WHO = [
   { icon: "fa-people-group", text: "Teams in fast-paced or high-responsibility environments" },

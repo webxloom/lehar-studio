@@ -14,7 +14,7 @@ export const TESTIMONIALS: Testimonial[] = [
     initials: "LD",
     name: "Liezel Dsouza",
     paras: [
-      "I went into my sound healing session with Kavita not really knowing what to expect. I'd heard about sound healing but never experienced it myself. What followed was genuinely unexpected. Kavita created such a calm, safe space, and by the end I felt a level of stillness and lightness I honestly didn't think was possible from just sounds. I walked away with a real appreciation for this form of healing that I didn't have going in. If you're curious but unsure, I'd say just go. You don't need to understand it beforehand to feel its effect.",
+      "I went into my sound healing session with Kavitha not really knowing what to expect. I'd heard about sound healing but never experienced it myself. What followed was genuinely unexpected. Kavitha created such a calm, safe space, and by the end I felt a level of stillness and lightness I honestly didn't think was possible from just sounds. I walked away with a real appreciation for this form of healing that I didn't have going in. If you're curious but unsure, I'd say just go. You don't need to understand it beforehand to feel its effect.",
     ],
   },
   {
@@ -34,7 +34,7 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Ameya Pradhan",
     role: "Business Coach",
     paras: [
-      "Hi everyone, my name is Ameya Pradhan. I'm a business coach, and this is something that I want to talk about Lehar, and specifically Kavitha, who's running Lehar so very well.",
+      "Hi everyone, my name is Ameya Pradhan. I'm a business coach, and this is something that I want to talk about Léhar, and specifically Kavitha, who's running Léhar so very well.",
       "So I met Kavitha a few months ago when I was introduced to her by her mom, and she told me about what she does with sound healing. And while we stayed connected and we spoke about what she does, there wasn't really an opportunity for me to go and experience her work. Very recently I did that because there was too much stress, a lot of lack of alignment is what I felt due to things happening around me in my life. And that's when Kavitha suggested, 'Why don't I come down and experience a sound bath?'",
       "And guess what? That was the best decision I took. I just didn't go alone; I took my wife, and both of us experienced the sound bath, and she somehow knew exactly what we needed. Because since then, it's been a space where we have been feeling realigned, re-energized, refocused on things that we want to achieve in our life, and we've been really kicking hard to achieve our goals.",
       "So Kavitha, thank you for that session. I really appreciate it. I would recommend you wholeheartedly to my friends, my family, people I believe who need more of this, because focus, alignment, and clarity is what will take us to the next level. Thank you so much for what you've done.",

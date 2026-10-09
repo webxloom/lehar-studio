@@ -69,6 +69,17 @@ Checks before pushing: `pnpm build` and `pnpm lint`.
 - **Music Therapy:** "The Living Wisdom of Rāga" now plays `deep-sleep-vibration.mp3`. It had the same track as section 1. `deep-healing-freq.mp3` and `full-body-healing.mp3` are spare
 - `lib/images.ts` regenerated for the replaced images
 
+## Live fixes (Aji's Website Audit, after launch at www.leharstudio.com)
+
+- **Domain:** `SITE_URL` defaults to `https://www.leharstudio.com`. Canonical, og:url, og:image, sitemap and robots all pointed at example.com.
+- **Per-page share tags:** `lib/seo.tsx` `pageMeta()` gives every page its own canonical, Open Graph and Twitter title/description, plus `og:locale en_IN`. Services title shortened to stay under about 60 characters.
+- **Structured data:** business JSON-LD with address (Mulund East, Mumbai, MH, IN), `alternateName` "Lehar Studio", image and logo; `BreadcrumbList` on every banner; `FAQPage` with all 40 questions.
+- **Crawlability:** every FAQ is now in the HTML (inactive groups hidden), and the booking form is server-rendered (`?service=` read on the client).
+- **Favicon:** `app/favicon.ico`, `app/icon.png` and `app/apple-icon.png` from the Léhar logo replace the default Next.js icon.
+- **Hero:** poster shows from first paint; the video fades in once it can play and is skipped for reduced motion, data-saver and 2G.
+- **Images:** generated widths capped at 2048px (`next.config.ts`).
+- **Content:** "Kavita" and "Lehar" normalised in testimonials; Group age "12+ (12–17 with guardian consent)"; Home intro names Mulund East, Mumbai; nav and footer say "Group Sound Baths".
+
 ## Open items
 
 - None. Live at https://www.leharstudio.com

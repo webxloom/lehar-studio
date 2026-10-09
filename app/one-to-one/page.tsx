@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { ParallaxCta, PhotoBanner, Sec, Split, Verse } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Personalised One-to-One Sound Immersion | Léhar Studio, Mulund East",
   description:
     "A personalised sound immersion journey at Léhar Studio, Mulund East, shaped around you with grounding, breathwork and sound. Begin with a conversation.",
-  alternates: { canonical: "/one-to-one" },
-};
+  path: "/one-to-one",
+});
 
 const ELEMENTS = [
   { icon: "fa-shoe-prints", text: "Grounding and guided relaxation" },

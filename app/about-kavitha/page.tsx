@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Img, ParallaxCta, PhotoBanner, Sec, Verse } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "About Kavitha Prasad | Founder of Léhar Studio, Mumbai",
   description:
     "Meet Kavitha Prasad, certified sound healing practitioner and founder of Léhar Studio in Mulund East, Mumbai. Her story, vision, mission and guiding principles.",
-  alternates: { canonical: "/about-kavitha" },
-};
+  path: "/about-kavitha",
+});
 
 const STORY = [
   {

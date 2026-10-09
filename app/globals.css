@@ -639,3 +639,6 @@ html:has(.service-overview-intro){scroll-behavior:auto}
 @media (max-width:900px){.form-img{order:-1;height:220px;min-height:0}.form-img img{-webkit-mask-image:none;mask-image:none}}
 /* Hero: show the poster frame instantly while the (client-only) video loads */
 .hero{background:radial-gradient(ellipse at 50% 35%,rgba(22,50,63,.35) 0%,rgba(5,12,16,.35) 100%),url('/images/hero-poster.avif') center/cover no-repeat,#0b1c24}
+/* Hero video fades in over the poster once it can play */
+.hero video{opacity:0;transition:opacity 1.2s ease}
+.hero video.is-ready{opacity:1}

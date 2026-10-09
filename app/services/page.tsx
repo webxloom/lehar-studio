@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Img, ParallaxCta, PhotoBanner, Sec, Verse } from "@/components/ui";
 
-export const metadata: Metadata = {
-  title: "Services | Group, One-to-One & Corporate Sound Immersion | Léhar Studio",
+export const metadata = pageMeta({
+  title: "Sound Healing Services in Mumbai | Léhar Studio",
   description:
     "Compare Léhar Studio’s pathways: Group Sound Baths, personalised One-to-One Immersions, bespoke Corporate Harmony & Retreat experiences and Music Therapy in Mumbai.",
-  alternates: { canonical: "/services" },
-};
+  path: "/services",
+});
 
 const SERVICES = [
   {

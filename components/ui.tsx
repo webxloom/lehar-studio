@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WaveDivider from "@/components/WaveDivider";
 import { IMAGE_SIZES } from "@/lib/images";
+import { JsonLd, absoluteUrl } from "@/lib/seo";
 
 type Children = { children?: React.ReactNode };
 
@@ -105,6 +106,18 @@ export function PhotoBanner({
       className={`banner has-photo${pos ? ` pos-${pos}` : ""}`}
       style={{ "--banner-img": `url('/images/${img}')` } as React.CSSProperties}
     >
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: crumbs.map((c, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: c.label,
+            ...(c.href ? { item: absoluteUrl(c.href) } : {}),
+          })),
+        }}
+      />
       <Img name={img} className="banner-img" sizes="100vw" priority />
       <div className="banner-in">
         <div className="wrap">

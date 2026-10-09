@@ -100,15 +100,25 @@ export default function FaqExplorer({ groups }: { groups: FaqGroup[] }) {
       )}
 
       {groups.map((g, gi) => {
-        const items = g.qs.map((x, qi) => ({ ...x, id: `${gi}-${qi}` })).filter((x) => (matches ? matches.has(x.id) : gi === tab));
-        if (!items.length) return null;
+        // Every question stays in the HTML (so search engines can read all
+        // groups); inactive groups and non-matching questions are hidden.
+        const items = g.qs.map((x, qi) => ({ ...x, id: `${gi}-${qi}` }));
+        const shown = items.filter((x) => (matches ? matches.has(x.id) : gi === tab));
         return (
-          <div key={g.label} className="panel" role="tabpanel" id={`p${gi}`} aria-labelledby={`t${gi}`}>
+          <div
+            key={g.label}
+            className="panel"
+            role="tabpanel"
+            id={`p${gi}`}
+            aria-labelledby={`t${gi}`}
+            hidden={shown.length === 0}
+          >
             {!matches && g.verse && <Verse lines={[g.verse]} />}
             {items.map((x) => (
               <details
                 key={x.id}
                 className="q"
+                hidden={!shown.includes(x)}
                 open={matches ? true : open.has(x.id)}
                 onToggle={(e) => {
                   if (matches) return;

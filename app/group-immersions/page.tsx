@@ -1,19 +1,19 @@
-import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Img, PhotoBanner, Sec, Split, Verse } from "@/components/ui";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Group Sound Baths in Mumbai | Léhar Studio",
   description:
     "Guided 60-minute Group Sound Baths for up to ten people: Himalayan singing bowls, gong and resonant sound, held at your venue. Enquire with Léhar Studio.",
-  alternates: { canonical: "/group-immersions" },
-};
+  path: "/group-immersions",
+});
 
 const FACTS = [
   ["Duration", "About 60 minutes"],
   ["Group size", "Up to 10, customisable*"],
   ["Where", "Organiser's indoor venue"],
-  ["Age", "12 and above"],
+  ["Age", "12+ (12–17 with guardian consent)"],
   ["Investment", "On request"],
 ];
 

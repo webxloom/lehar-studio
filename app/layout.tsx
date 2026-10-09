@@ -42,6 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Léhar Studio",
+    locale: "en_IN",
     title,
     description,
     url: "/",
@@ -49,7 +50,6 @@ export const metadata: Metadata = {
     images: [{ url: "/og-lehar.png", width: 1200, height: 630, alt: "Léhar Studio" }],
   },
   twitter: { card: "summary_large_image", title, description, images: ["/og-lehar.png"] },
-  icons: { icon: "/images/lehar-logo-dark.avif" },
 };
 
 export const viewport: Viewport = {
@@ -61,11 +61,20 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
   name: STUDIO.name,
+  alternateName: ["Lehar Studio", "Léhar"],
   description: "Sound immersion, structured breathwork and grounding led by Kavitha Prasad in Mulund East, Mumbai.",
   url: SITE_URL,
   telephone: STUDIO.phone,
   email: STUDIO.email,
   areaServed: STUDIO.areaServed,
+  image: `${SITE_URL}/og-lehar.png`,
+  logo: `${SITE_URL}/images/lehar-logo-dark.avif`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Mulund East, Mumbai",
+    addressRegion: "Maharashtra",
+    addressCountry: "IN",
+  },
   founder: { "@type": "Person", name: STUDIO.founder },
   sameAs: [STUDIO.instagram],
 };

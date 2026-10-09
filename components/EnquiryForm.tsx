@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState, useSyncExternalStore } from "react";
 import { Img } from "@/components/ui";
 import { STUDIO, waLink } from "@/lib/site";
 
@@ -43,10 +42,19 @@ function fmt(v: string) {
 
 // Aji's enquiry flow: builds a ready-written message and opens WhatsApp (or
 // email). Nothing is stored on the site. `?service=` preselects the service.
+const noop = () => () => {};
+const serviceFromUrl = () => {
+  const v = new URLSearchParams(window.location.search).get("service");
+  return SERVICES.some((s) => s.value === v) ? v : null;
+};
+
 export default function EnquiryForm() {
-  const params = useSearchParams();
-  const initial = SERVICES.some((s) => s.value === params.get("service")) ? params.get("service")! : "group";
-  const [svc, setSvc] = useState(initial);
+  // Server renders the full form (default "group"); the ?service= preselect is
+  // read on the client, so the page HTML is never empty for search engines.
+  const fromUrl = useSyncExternalStore(noop, serviceFromUrl, () => null);
+  const [picked, setPicked] = useState<string | null>(null);
+  const svc = picked ?? fromUrl ?? "group";
+  const setSvc = setPicked;
   const [name, setName] = useState("");
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
